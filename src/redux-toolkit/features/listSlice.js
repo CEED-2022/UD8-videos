@@ -7,12 +7,10 @@ const initialState = {
 
 function error(state, error) {
   state.error = error
-  return state
 }
 
 function removeItemAction(state, action) {
   state.items = state.items.filter((_, index) => index !== action.payload)
-  return state
 }
 
 function addItemAction(state, action) {
@@ -23,7 +21,6 @@ function addItemAction(state, action) {
 
   state.items = [...state.items, payload]
   state.error = null
-  return state
 }
 
 const listSlice = createSlice({

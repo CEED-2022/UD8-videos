@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAction } from '@reduxjs/toolkit'
 
 const initialState = {
   items: [],
@@ -15,13 +15,39 @@ const listSlice = createSlice({
     }
   },
   extraReducers: {
-    'list/banana/subaction1': function(state, action) {
-      state.items.push(action.payload.message)
+    'list/fruits/fullfilled': function(state, action) {
+      state.items.push(...action.payload.message)
+      state.loading = false
+      state.error = null
     },
-    'list/banana/subaction2': function(state, action) {
-      state.items.push('message 2' + action.payload.message)
+    'list/fruits/pending': function(state) {
+      state.loading = true
+      state.error = null
+    },
+    'list/fruits/rejected': function(state, action) {
+      state.error = action.payload.error
+      state.items = []
+      state.loading = false
     }
   }
 })
 
+const fruitsFullfilled = createAction('list/fruits/fullfilled', message => {
+  return {
+    payload: {
+      message
+    }
+  }
+})
+const fruitsPending = createAction('list/fruits/pending')
+const fruitsRejected = createAction('list/fruits/rejected', error => {
+  return {
+    payload: {
+      error
+    }
+  }
+})
+
+export const { banana } = listSlice.actions
+export { fruitsFullfilled, fruitsPending, fruitsRejected }
 export default listSlice.reducer

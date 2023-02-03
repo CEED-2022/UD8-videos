@@ -19,7 +19,8 @@
   // You can check the rules here: https://eslint.org/docs/rules/
   // If eslint is complaining about a rule not enumerated here, you can ignore it.
   "rules": {
-      "react/prop-types": "disabled",
+      "react/prop-types": 0,
+      "react/react-in-jsx-scope": "off",
       "complexity": ["error", { "max": 5 }],
       "array-callback-return": "error",
       "constructor-super": "error",

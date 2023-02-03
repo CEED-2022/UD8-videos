@@ -1,4 +1,4 @@
-const TIME = 2000
+const TIME = 200
 
 function generateFruitList() {
   const fruits = ['apple', 'banana', 'orange', 'grape', 'strawberry'];

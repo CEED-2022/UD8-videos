@@ -1,6 +1,6 @@
 
 function Items(props) {
-  const { onDelete, items } = props
+  const { items } = props
 
   return (
     <ul>

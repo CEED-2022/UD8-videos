@@ -25,7 +25,7 @@ const fakeData = {
   }
 
 function getUserData(user) {
-  return new Promise((resolve, _) => {
+  return new Promise((resolve) => {
     setTimeout(() => resolve(fakeData[user]),  Math.random() * (MAX - MIN) + MIN)
   })
 }

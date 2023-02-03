@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Calendar from './calendar/Calendar'
 import CalendarClass from './calendar/CalendarClass'
 import './styles/app.css'

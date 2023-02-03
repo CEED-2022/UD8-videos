@@ -1,10 +1,8 @@
 import { useState } from "react"
-import User from "./User"
-import UserHook from "./UserHook"
 import UserWithChild from "./UserWithChild"
 import './users.css'
 
-function Users(props) {
+function Users() {
 
   const [user, setUser] = useState()
   const [color, setColor] = useState('red')

@@ -11,7 +11,7 @@ const listSlice = createSlice({
   name: 'list',
   initialState: initialState,
   reducers: {
-    banana(state, action) {
+    banana(state) {
       state.items.push('La otra banana')
     }
   },

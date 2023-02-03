@@ -1,4 +1,3 @@
-import { useReducer } from "react"
 import NewItem from "./NewItem"
 import Items from "./Items"
 

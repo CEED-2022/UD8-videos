@@ -3,6 +3,7 @@ import { getData } from './get_data'
 
 const fetchFruits = createAsyncThunk(
   'list/fruits',
+  /* eslint-disable-next-line no-unused-vars */
   async (args, api) => {
     try {
       const ERROR_PROBABILITY = 0.4
@@ -11,6 +12,7 @@ const fetchFruits = createAsyncThunk(
       return {message: [...args, ...fruits]}
     }catch(error) {
       // Process whatever here, or remove the catch block
+      console.log('Error in fetchFruits thunk: ', error)
       throw error
     }
   }

@@ -7,7 +7,7 @@ import Text from "./Text"
 
 import banana from "./banana.png"
 
-function Conditional(props) {
+function Conditional() {
 
   const [showImage, setShowImage] = useState(false)
   const [showMethod, setShowMethod] = useState("list")

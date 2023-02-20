@@ -15,21 +15,22 @@ const listSlice = createSlice({
       state.items.push('La otra banana')
     }
   },
-  extraReducers: {
-    [fetchFruits.fulfilled]: function(state, action) {
+  extraReducers: builder => {
+    builder
+    .addCase(fetchFruits.fulfilled, function(state, action) {
       state.items.push(...action.payload.message)
       state.loading = false
       state.error = null
-    },
-    [fetchFruits.pending]: function(state) {
+    })
+    .addCase(fetchFruits.pending, function(state) {
       state.loading = true
       state.error = null
-    },
-    [fetchFruits.rejected]: function(state, action) {
+    })
+    .addCase(fetchFruits.rejected, function(state, action) {
       state.error = action.error.message
       state.items = []
       state.loading = false
-    }
+    })
   }
 })
 
